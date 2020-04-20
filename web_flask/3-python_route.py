@@ -22,6 +22,7 @@ def dyn_text(text):
     """Returns dynamic text"""
     return ("C {}\n".format(text.replace("_", " ")))
 
+
 @app.route("/python/<text>", strict_slashes=False)
 @app.route("/python/", strict_slashes=False, defaults={"text": "is_cool"})
 def opt_text(text="is_cool"):
