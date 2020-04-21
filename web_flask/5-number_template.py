@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """This module starts a simple flask server"""
 from flask import Flask
 from flask import render_template

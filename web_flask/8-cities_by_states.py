@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Serves a page with a list of all states"""
 from models import storage
 from models.state import State
