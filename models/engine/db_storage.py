@@ -12,6 +12,7 @@ from models.place import Place
 from models.review import Review
 from models.base_model import Base
 
+
 class DBStorage:
     '''db engine'''
     __engine = None
@@ -30,7 +31,7 @@ class DBStorage:
 
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
                                       format(usr, pswd, host, db),
-                                             pool_pre_ping=True)
+                                      pool_pre_ping=True)
         if getenv('HBNB_ENV') == 'test':
             Base.metadata.drop_all(self.__engine)
 
@@ -42,7 +43,7 @@ class DBStorage:
             ret = []
             for ctype in DBStorage.all_classes:
                 ret.extend(self.__session.query(ctype).all())
-        return {"{}.{}".format(type(item).__name__, item.id):item
+        return {"{}.{}".format(type(item).__name__, item.id): item
                 for item in ret}
 
     def new(self, obj):
@@ -63,7 +64,7 @@ class DBStorage:
         '''reload to current db session'''
         Base.metadata.create_all(self.__engine)
         Session = sessionmaker(bind=self.__engine,
-                                      expire_on_commit=False)
+                               expire_on_commit=False)
         Session = scoped_session(Session)
         self.__SESSION = Session
         self.__session = Session()
