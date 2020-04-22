@@ -48,7 +48,7 @@ def html_num(n):
 def html_ooe(n):
     """Returns a rendered html page"""
     return (render_template("6-number_odd_or_even.html", num=n,
-                            ooe="Odd" if n % 2 else "Even"))
+                            ooe="odd" if n % 2 else "even"))
 
 
 if __name__ == "__main__":
