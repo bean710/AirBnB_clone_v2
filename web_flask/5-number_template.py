@@ -10,32 +10,32 @@ app = Flask(__name__)
 @app.route("/", strict_slashes=False)
 def hello_world():
     """Sends simple text"""
-    return ("Hello HBNB!\n")
+    return ("Hello HBNB!")
 
 
 @app.route("/hbnb", strict_slashes=False)
 def hello_hbnb():
     """Sends simple text"""
-    return ("HBNB\n")
+    return ("HBNB")
 
 
 @app.route("/c/<text>", strict_slashes=False)
 def dyn_text(text):
     """Returns dynamic text"""
-    return ("C {}\n".format(text.replace("_", " ")))
+    return ("C {}".format(text.replace("_", " ")))
 
 
 @app.route("/python/<text>", strict_slashes=False)
 @app.route("/python/", strict_slashes=False, defaults={"text": "is_cool"})
 def opt_text(text="is_cool"):
     """Returns optional dynamic text"""
-    return("Python {}\n".format(text.replace("_", " ")))
+    return("Python {}".format(text.replace("_", " ")))
 
 
 @app.route("/number/<int:n>", strict_slashes=False)
 def is_num(n):
     """Returns if n is a number"""
-    return ("{} is a number\n".format(n))
+    return ("{} is a number".format(n))
 
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
