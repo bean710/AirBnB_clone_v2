@@ -61,7 +61,6 @@ button:hover {
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     background: #FAFAFA;
-	padding-left: 5px;
 	height: max-content;
 	max-height: 300px;
 	overflow: scroll;
